@@ -253,13 +253,14 @@ header img{
 /*----------SESSÃO 4----------*/
 .rodape{
     background-color: gray;
-    padding: 50px 0px 100px 100px;
+    padding: 50px 0px 0px 0px;
 
 }
 .rodape p{
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 15px;
+    font-size: 1rem;
     color: white;
+    padding-left: 100px;
 
 }
 .rodape span{
@@ -269,11 +270,25 @@ header img{
 }
 .rodape .social{
     padding: 5px;
-
+    padding-left: 100px;
+    
 }
 .rodape img{
     width: 40px;
-    margin: 10px;    
+    margin: 10px;
+
+}
+.rodape .direitos{
+    margin: 100px 0px 0px 0px;
+
+}
+.rodape .direitos #dir{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-weight: 500;
+    padding: 10px 0px;
+    background-color: rgb(141, 139, 139);
+
 }
 /*----------RESPONSE----------*/
 @media screen and (max-width: 700px) {
@@ -285,7 +300,9 @@ header img{
         flex-direction: column;
         padding: 5px 20px;
     }
+  }
+  @media screen and (max-width: 800px) {
     .solutions{
         flex-direction: column;
     }
-  } 
+  }  
