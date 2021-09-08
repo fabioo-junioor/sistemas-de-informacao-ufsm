@@ -1,0 +1,218 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+h3{
+    text-decoration: underline;
+}
+body, html{
+    background-color: #212529;
+}
+/*###############################################*/
+header{
+    margin-bottom: 90px;
+
+}
+#menu .container-fluid img{
+    padding-left: 50px;
+    height: 70px;
+
+}
+#menu .container-fluid ul{
+    padding-right: 50px;
+
+}
+#menu .container-fluid ul li{
+    color: white;
+    font-weight: 500;
+
+}
+#menu .container-fluid ul li:hover{
+    border: 2px solid white;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+
+}
+/*###############################################*/
+.banner img{
+    background-color: #212529ea;
+    width: 100vw;
+    height: auto;
+}
+/*###############################################*/
+.descricao{
+    background-color: #212529ea;
+    color: white;
+    padding: 100px 0px 20px 0px;
+
+}
+.descricao .container-fluid{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: justify;
+    font-weight: 500;
+    width: 80%;
+}
+.descricao .container-fluid .col-md-6{
+    text-align: center;
+    padding-bottom: 20px;
+
+}
+.descricao .container-fluid p{
+    text-shadow: 1px 1px 10px rgba(255, 255, 255, 0.247);
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 1rem;
+    text-align: justify;
+}
+.descricao .container-fluid button{
+    padding: 10px;
+    height: 70px;
+    width: 250px;
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+}
+/*###############################################*/
+.avaliacao{
+    background-color: #212529;
+    background: url(/img/sis-info.jpg) fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: white;
+    padding: 100px 0px 50px 0px;
+    text-align: center;
+    font-weight: 500;
+
+}
+.avaliacao .container .col-md-4 p{
+    background-color: #4773b2;
+    border-radius:5px 40%;
+    text-align: center;   
+    padding: 100px 0px 100px 0px;
+    
+}
+/*###############################################*/
+.noticias{
+    background-color: #212529ea;
+    background: url(/img/sis-info.jpg) fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: white;
+    padding: 100px 0px 100px 0px;
+    text-align: center;
+    font-weight: 500;
+
+}
+.noticias .container .col-md-4 p{
+    background-color: #4773b2;
+    border-radius: 10px;
+    text-align: center;   
+    padding: 100px 0px 100px 0px;
+    
+}
+.noticias .container .card{
+    background-color: rgba(255, 255, 255, 0.863);
+    border-radius: 15px;
+    margin-bottom: 2px;
+}
+.noticias .container .card-title, .card-text{
+    color: black;
+    font-weight: 500;
+    padding: 10px;
+}
+/*###############################################*/
+.corpo-docente{
+    background-color: #212529;
+    color: white;
+    text-align: center;
+    font-weight: 500;
+
+}
+.corpo-docente .container .modal-body, .modal-header, .modal-footer{
+    background-color: #4774b2;
+}
+.corpo-docente .container .col-md-3{
+    border: 2px solid white;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    padding-top: 10px;
+}
+/*###############################################*/
+.formulario{
+    background-color: #212529ea;
+    color: white;
+    padding: 100px 0px 100px 0px;
+    font-weight: 500;
+
+}
+.formulario .container{
+    width: 60%;
+
+}
+.formulario .container input::placeholder, textarea::placeholder{
+    color: black;
+    font-weight: 200;
+    padding-left: 10px;
+    padding-bottom: 5px;
+
+}
+#nome, #idade, #email, #telefone, #cidade, #estado{
+    height: 50px;
+    border: none;
+    border-radius: 15px;
+    margin-bottom: 2px;
+    color: black;
+    font-weight: 200;    
+
+}
+#mensagem{
+    border: none;
+    border-radius: 15px;
+    width: 100%;
+    height: 200px;
+}
+.formulario .container button{
+    height: 50px;
+    width: 100%;
+    color: white;
+    font-weight: 500;
+    border-radius: 10px;
+
+}
+/*###############################################*/
+.contato{
+    background-color: #212529;
+    color: white;
+    padding: 100px 0px 0px 0px;
+    font-weight: 500;
+
+}
+.contato .container-fluid .local{
+    text-align: justify;
+    padding-left: 20px;
+    float: left;
+    padding-bottom: 50px;
+
+}
+.contato .container-fluid img{
+    height: 150px;
+    float: right;
+    padding-right: 20px;
+    padding-bottom: 50px;
+    
+}
+.contato .container-fluid .from{
+    text-align: center;
+    padding-bottom: 0px;
+    
+}

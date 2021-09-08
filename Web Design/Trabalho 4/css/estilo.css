@@ -1,0 +1,17 @@
+@media screen and (min-width: 768px){
+    #empresa, #servicos, #contato, #banner{
+        height: 100vh;
+    }
+    
+}
+#empresa, #servicos, #contato, #banner{
+    padding-top: 18vh;
+}
+#empresa #imgNote{
+    height: 60%;
+
+}
+#servicos{
+    background-color: rgb(126, 126, 126);
+
+}
