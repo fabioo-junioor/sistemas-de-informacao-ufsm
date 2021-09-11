@@ -1,0 +1,19 @@
+
+Pack_Estudante.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+running-1
+  rotate: false
+  xy: 1, 1
+  size: 232, 70
+  orig: 232, 70
+  offset: 0, 0
+  index: -1
+running-2
+  rotate: false
+  xy: 235, 1
+  size: 232, 70
+  orig: 232, 70
+  offset: 0, 0
+  index: -1
