@@ -1,0 +1,153 @@
+/* O * estabelece ações no documento inteiro */
+/* Formata elementos básicos */
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background: silver;
+    color: black;
+    font: normal 12px "Nimbus Sans L", "Arial", sans-serif;
+    text-align: justify;
+}
+
+p {
+    background: white;
+    color: black;
+    font-size: 1rem;
+    padding: 12px 30px 12px 0px;
+    text-align: justify;
+}
+
+h1 {
+    background-color: white;
+    color: black;
+    font-size: 1.2rem;
+    padding-top: 4px;
+    padding-bottom: 12px;
+}
+
+/* Elemento estrutural */
+#estrutura {
+    background: white;
+    color: black;
+    margin: 0px auto; /*margem sup. 0 pixels e demais definidas automaticamente*/
+    width: 780px; /*largura*/
+}
+
+#cabecalho {
+/*position: fixed;*/
+    background: white;
+    color: black;
+    height: 80px; /*altura*/
+    margin: 0px auto;
+    text-align: center;
+    width: 780px; /*largura*/
+}
+
+#titulo-cabecalho {
+    padding-top: 20px;
+}
+
+#titulo-cabecalho h1 {
+    background: white;
+    color: black;
+    font-size: 30px;
+}
+
+#menu-superior {
+    display: flex;
+    background: navy;
+    color: white;
+    border-top: 2px solid black;
+    font-weight: bold;
+    font-size: 1rem;
+    height: 44px;
+    margin: 0px auto;
+    padding: 0px 18px; 
+    text-align: center;
+    justify-content: center;
+
+}
+
+#menu-superior a { /*links*/
+    background: navy;
+    color: white;
+    line-height: 44px;
+    margin-right: 12px;
+    padding: 0px 4px;
+    text-decoration: none;
+    font-size: 1rem;
+    
+}
+
+#menu-superior a:hover { /*quando o ponteiro do mouse estiver posicionado sobre*/
+    background: navy;
+    color: #cccccc;
+    transform: scale(0.95);
+    
+}
+
+#home{
+    height: 80%;
+    
+}
+
+#principal {
+    display: table;
+    /*dispõe a área como tabela*/
+    /*no firefox, sua falta ocasiona erro de formação*/
+    /*no explorer, não*/
+}
+
+#menu-esquerdo {
+    float: left;
+    width: 180px;
+}
+
+#menu-esquerdo ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+#menu-esquerdo li {
+    border-top: 1px solid silver;
+    font-size: 13px;
+    list-style: none;
+}
+
+#menu-esquerdo li a {
+    background: navy;
+    color: white;
+    display: block;
+    padding: 8px 4px 8px 24px;
+    text-decoration: none;
+}
+
+#menu-esquerdo li a:hover {
+    background: navy;
+    color: aqua;
+}
+
+#conteudo {
+    float: right;
+    margin-left: 20px;
+    padding-left: 12px;
+    padding-top: 12px;
+    width: 565px;
+}
+
+#rodape {
+    background: navy;
+    border-top: 2px solid black;
+    color: white;
+    font-size: 1rem;
+    line-height: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px; 
+    text-align: center;
+    width: 780px;
+}
