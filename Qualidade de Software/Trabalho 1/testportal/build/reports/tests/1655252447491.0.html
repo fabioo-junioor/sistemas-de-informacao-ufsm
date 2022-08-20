@@ -1,0 +1,848 @@
+<html lang="pt-br"><head>
+        <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Portal Biblioteca - Pesquisa Acervo</title>
+        <link rel="shortcut icon" type="image/png" href="data:image/png;base64,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">
+
+        <link rel="stylesheet" type="text/css" media="screen" href="/mocca/assets/css/browser-detector-min.css">
+        <link rel="stylesheet" type="text/css" href="/mocca/assets/css/smoothness/jquery-ui-min.css">
+        <link rel="stylesheet" type="text/css" href="/mocca/assets/css/mocca-pack-ufsm-min.css">
+        <link rel="stylesheet" type="text/css" href="/biblioteca/assets/css/local.css">
+
+        <script type="text/javascript" src="/mocca/assets/js/browser-detector-min.js"></script>
+        <script type="text/javascript" src="/mocca/assets/js/jquery-min.js"></script>
+        <script type="text/javascript" src="/mocca/assets/js/jquery-ui-min.js"></script>
+        <script type="text/javascript" src="/mocca/assets/js/jquery-mocca-pack-min.js"></script>
+
+        
+        <script type="text/javascript" src="/biblioteca/dwr/engine.js"></script>
+        <script type="text/javascript" src="/biblioteca/dwr/util.js"></script>
+        <script type="text/javascript" src="/mocca/assets/js/dwr.js"></script>
+
+        <script type="text/javascript">
+            /* global BrowserDetector */
+            /*
+             BrowserDetector.reject({
+             'browser': 'msie',
+             'engine': 'trident',
+             'platform': 'windows',
+             'comp': '<',
+             'version': '9'
+             });
+             */
+            BrowserDetector.showNoticeOnLoad();
+        </script>
+    
+
+    <!-- Google Analytics --> <script> window.ga=window.ga || function() { (ga.q=ga.q||[]).push(arguments) }; ga.l=+new Date; ga('create', 'UA-11595822-1', 'auto'); ga('send', 'pageview'); </script> <script async="" src="https://www.google-analytics.com/analytics.js"></script> <!-- End Google Analytics -->
+</head>
+<body style="">
+    <header id="app_top" role="banner" class="band shadowed no-print"><div class="skiplink-bar primary"><a href="#app_top" class="skiplink" accesskey="0" tabindex="-1"><span class="skiplink-text"><span class="icon-link" aria-hidden="true"></span> Ir para o topo</span></a><a href="#app_content" class="skiplink" accesskey="1"><span class="skiplink-text"><span class="icon-link" aria-hidden="true"></span> Ir para o conteúdo principal</span></a></div><div class="band govbar2 no-print" data-role="govbar"><div class="container"><nav aria-label="Barra do Governo Federal"><ul class="govbar2-list" role="presentation"><li class="flag"><a href="http://brasil.gov.br" class="uppercase" target="gov">Brasil</a></li><li><a href="http://brasil.gov.br/barra#acesso-informacao" target="gov">Acesso à informação</a></li></ul><ul class="govbar2-list pull-right" role="presentation"><li><a href="http://brasil.gov.br/barra#participe" target="gov">Participe</a></li><li><a href="http://www.servicos.gov.br" target="gov">Serviços</a></li><li><a href="http://www.planalto.gov.br/legislacao" target="gov">Legislação</a></li><li><a href="http://brasil.gov.br/barra#orgaos-atuacao-canais" target="gov">Canais</a></li></ul></nav></div></div>
+        <!-- menu navbar -->
+        
+
+    
+    
+    
+    
+    
+
+    <div id="app_shortcuts">
+        <nav class="band navbar ufsm-top" aria-label="Barra de Atalhos de Aplicações">
+            <div class="container no-padding-v">
+                <ul class="nav mini" role="presentation">
+                    
+                        <li>
+                            <div class="btn-group">
+                                <a id="item_institucional" class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0);" aria-haspopup="true" aria-expanded="false">
+                                    Institucional <span class="caret"></span>
+                                </a>
+                                <ul id="popup_institucional" class="dropdown-menu" aria-labelledby="item_institucional" role="menu">
+                                    
+                                        <li role="menuitem"><a tabindex="-1" href="http://portal.ufsm.br/autenticacao"><span class="icon-globe" aria-hidden="true"></span> Autenticação de Documentos</a></li>
+                                        
+                                        <li role="menuitem"><a tabindex="-1" href="http://portal.ufsm.br/biblioteca"><span class="icon-globe" aria-hidden="true"></span> Biblioteca</a></li>
+                                        
+                                        <li role="menuitem"><a tabindex="-1" href="http://portal.ufsm.br/concursos/inscricao/concursos.html"><span class="icon-globe" aria-hidden="true"></span> Concursos e Seleções Públicas</a></li>
+                                        
+                                        <li role="menuitem"><a tabindex="-1" href="http://portal.ufsm.br/processos"><span class="icon-globe" aria-hidden="true"></span> Consulta Processos</a></li>
+                                        
+                                        <li role="menuitem"><a tabindex="-1" href="http://portal.ufsm.br/ementario"><span class="icon-globe" aria-hidden="true"></span> Ementário</a></li>
+                                        
+                                        <li role="menuitem"><a tabindex="-1" href="http://portal.ufsm.br/jai"><span class="icon-globe" aria-hidden="true"></span> Jornada Acadêmica Integrada</a></li>
+                                        
+                                        <li role="menuitem"><a tabindex="-1" href="http://portal.ufsm.br/ouvidoria"><span class="icon-globe" aria-hidden="true"></span> Ouvidoria</a></li>
+                                        
+                                        <li role="menuitem"><a tabindex="-1" href="http://portal.ufsm.br/documentos"><span class="icon-globe" aria-hidden="true"></span> Portal de Documentos</a></li>
+                                        
+                                        <li role="menuitem"><a tabindex="-1" href="http://portal.ufsm.br/patrimonio"><span class="icon-globe" aria-hidden="true"></span> Portal do Patrimônio</a></li>
+                                        
+                                        <li role="menuitem"><a tabindex="-1" href="http://portal.ufsm.br/ufsm-em-numeros"><span class="icon-globe" aria-hidden="true"></span> UFSM em Números</a></li>
+                                        
+                                </ul>
+                            </div>
+                        </li>
+                    
+                    
+                        <li>
+                            <div class="btn-group">
+                                <a id="item_aluno" class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0);" aria-haspopup="true" aria-expanded="false" aria-owns="popup_aluno" aria-controls="popup_aluno">
+                                    Aluno <span class="caret"></span>
+                                </a>
+                                <ul id="popup_aluno" class="dropdown-menu" role="menu" aria-labelledby="item_aluno">
+                                    
+                                        <li role="menuitem"><a tabindex="-1" href="http://portal.ufsm.br/agendamento"><span class="icon-globe" aria-hidden="true"></span> Agendamento</a></li>
+                                        
+                                        <li role="menuitem"><a tabindex="-1" href="http://portal.ufsm.br/aluno"><span class="icon-globe" aria-hidden="true"></span> Portal do Aluno</a></li>
+                                        
+                                        <li role="menuitem"><a tabindex="-1" href="http://portal.ufsm.br/projetos"><span class="icon-globe" aria-hidden="true"></span> Projetos</a></li>
+                                        
+                                        <li role="menuitem"><a tabindex="-1" href="http://portal.ufsm.br/ru"><span class="icon-globe" aria-hidden="true"></span> Restaurante Universitário</a></li>
+                                        
+                                        <li role="menuitem"><a tabindex="-1" href="http://portal.ufsm.br/usuario"><span class="icon-globe" aria-hidden="true"></span> Usuário</a></li>
+                                        
+                                </ul>
+                            </div>
+                        </li>
+                    
+                    
+                    
+                </ul>
+
+                
+            </div>
+        </nav>
+    </div>
+
+
+        <!-- main navbar -->
+        <div id="app_menu" class="band navbar ufsm gradient">
+            
+            
+            
+            
+            
+
+            <div class="container">
+                <nav aria-label="Menu Geral do Usuário">
+                    <h1 class="appname uppercase humanist-font"><a href="/biblioteca/index.html"><strong>UFSM</strong> | Portal Biblioteca</a></h1>
+                    <ul class="nav pull-right" role="presentation">
+                        <li>
+                            <div class="btn-group">
+                                
+                                    
+                                    
+                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                            <span class="icon-user"></span> Fabio Correa Costa Junior <span class="caret"></span>
+                                        </a>
+                                        <ul class="dropdown-menu" role="menu">
+                                            
+                                            <li role="menuitem"><a tabindex="-1" href="/usuario/restrita/alterarSenha.html"><span class="icon-pencil"></span> Alterar senha</a></li>
+                                            <li role="menuitem"><a tabindex="-1" href="/biblioteca/helpMenu.html"><span class="icon-question-sign"></span> Ajuda</a></li>
+                                            <li role="separator" class="divider"></li>
+                                            <li role="menuitem"><a tabindex="-1" href="/biblioteca/logout.html"><span class="icon-signout"></span> Sair</a></li>
+                                        </ul>
+                                    
+                                
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <!-- biblioteca navbar -->
+        <nav class="band navbar control gradient">
+            <div class="container mini-padding-v">
+                <ul class="nav responsive">
+                    <li>
+                        <div class="btn-group block">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                Pesquisa Acervo <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+                                <li><a href="/biblioteca/pesquisa/index.html">Nova pesquisa</a></li>
+                                <li><a href="/biblioteca/pesquisa/index.html?lastSearch=true">Último resultado</a></li>
+                                <li><a href="/biblioteca/pesquisa/salvaPesquisa.html">Salvar em disco</a></li>
+                                <li><a href="/biblioteca/pesquisa/emailPesquisa.html">Enviar por e-mail</a></li>
+                                <li><a href="/biblioteca/pesquisa/ultimasObrasCatalogadas.html">Últimas obras catalogadas</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="btn-group block">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                Recursos Eletrônicos <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+                                <li><a tabindex="-1" href="http://repositorio.ufsm.br" target="_blank">Manancial - Repositório Digital</a></li>
+                                <li><a tabindex="-1" href="/biblioteca/leitor/abnt.html" target="_blank">ABNT</a></li>
+                                <li><a tabindex="-1" href="/biblioteca/ajuda/ebsco.html">EBSCOhost</a></li>
+                                <li><a tabindex="-1" href="/biblioteca/leitor/ieeexplore.html">IEEE Xplore</a></li>
+                                <li><a tabindex="-1" href="http://www.periodicos.capes.gov.br" target="_blank">Portal de Periódicos da Capes</a></li>
+                                <li><a tabindex="-1" href="http://www.ufsm.br/revistas" target="_blank">Periódicos Eletrônicos da UFSM</a></li>
+                                    
+                                <li><a tabindex="-1" href="/biblioteca/leitor/minhaBiblioteca.html" target="_blank">Minha Biblioteca</a></li>
+                                <!--<li><a tabindex="-1" href="/biblioteca/leitor/minhaBibliotecaColecaoSaude.html" target="_blank">Minha Biblioteca - Coleção Saúde</a></li>-->
+                                <li><a tabindex="-1" href="http://ufsm.dotlib.com.br" target="_blank">Wiley</a></li>
+                                <li><a tabindex="-1" href="/biblioteca/leitor/magister.html" target="_blank">Lex Magister</a></li>                                
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="btn-group block">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                Meus Empréstimos <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+                                <li><a tabindex="-1" href="/biblioteca/leitor/situacao.html">Situação Atual</a></li>
+                                <li class="divider"></li>
+                                <li><a tabindex="-1" href="/biblioteca/leitor/historicoEmprestimos.html">Histórico de Empréstimos</a></li>
+                                <li><a tabindex="-1" href="/biblioteca/leitor/historicoReservas.html">Histórico de Reservas</a></li>
+                                <li><a tabindex="-1" href="/biblioteca/leitor/historicoMultas.html">Histórico de Multas</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="/biblioteca/leitor/renovacao.html">Renovação</a></li>
+                    <li>
+                        <div class="btn-group block">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                Aquisições <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+                                <li><a tabindex="-1" href="/biblioteca/aquisicao/minhasSolicitacoes.html">Minhas Solicitações</a></li>
+                                <li><a tabindex="-1" href="/biblioteca/aquisicao/formulario.html">Nova Solicitação</a></li>
+                                <li><a tabindex="-1" href="/biblioteca/relatorio/ultimasObrasAdquiridas.html">Últimas Obras Adquiridas</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="https://www.ufsm.br/orgaos-suplementares/biblioteca/contato" target="_blank">Fale Conosco</a></li>
+                    
+                    
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- main -->
+    <div id="app_content" role="main" class="band expansible">
+        <div class="container">
+            <h2 class="h2 primary stroked-bottom text-shadowed margin-bottom"><a class="skiplink-anchor" name="title2_anchor" style="" tabindex="-1">Pesquisa Acervo</a></h2>
+
+
+<div id="searchParams" class="box rounded bordered shadowed control margin-bottom">
+    <div class="row">
+        <div class="span5">
+            <label class="label" for="geral" id="LabelTag_vDU7E5w9JspaAvGQ">Pesquisa Geral</label>
+<br>
+
+            <input id="geral" type="search" name="geral" value="" class="textfield table-refresh-enter" data-placeholder="Exemplo: machado assis dom casmurro" placeholder="Exemplo: machado assis dom casmurro">
+            <span id="_geral" class="pill error" style="display: none;"></span>
+        </div>
+        <div class="span2">
+            <br>
+            <button id="search-btn1" type="button" class="btn primary small table-refresh"><i class="icon-search"></i>
+                Pesquisar
+            </button>
+            <button id="btnAvancada" type="button" class="btn small" title="Pesquisa avançada"><i class="icon-zoom-in"></i></button>
+        </div>
+    </div>
+    <div id="pesquisaAvancada" style="display: none;">
+        <div class="row">
+            <div class="span6">
+                <label class="label" for="autor" id="LabelTag_MxvQeMjH7PcU9Nht">Autor</label>
+<br>
+
+                <input id="autor" type="text" name="autor" value="" class="textfield table-refresh-enter">
+            </div>
+            <div class="span6">
+                <label class="label" for="titulo" id="LabelTag_6nYBmziL0KRol5Yf">Título</label>
+<br>
+
+                <input id="titulo" type="text" name="titulo" value="" class="textfield table-refresh-enter">
+            </div>
+        </div>
+        <div class="row">
+            <div class="span6">
+                <label class="label" for="assunto" id="LabelTag_3poa7n96lBPO5gfC">Assunto</label>
+<br>
+
+                <input id="assunto" type="text" name="assunto" value="" class="textfield table-refresh-enter">
+            </div>
+            <div class="span6">
+                <label class="label" for="ano" id="LabelTag_KZ1gLNVgUVM1ewRk">Ano da publicação</label>
+<br>
+
+                <input id="ano" type="text" name="ano" value="" class="textfield table-refresh-enter">
+            </div>
+        </div>
+        <div class="row">
+            <div class="span12">
+                <label class="label" for="livre" id="LabelTag_OQ89U74fP1oFeXtQ">Livre</label>
+<br>
+
+                <input id="livre" type="text" name="livre" value="" class="textfield table-refresh-enter">
+            </div>
+        </div>
+        <div class="row">
+            <div class="span4">
+                <span class="label" id="LabelTag_ixd2lvG0z6MMfkGf">Biblioteca</span>
+<br>
+
+                <select name="biblioteca" id="biblioteca" size="5" multiple="true" class="selectfield table-refresh-enter">
+                    
+                        
+                        
+                        <option value="1" title="Biblioteca Central">Biblioteca Central</option>
+                    
+                        
+                        
+                        <option value="37" title="Unidade de informação para catalogação de e-books, e-pubs e periódicos eletrônicos com acesso restrito à comunidade acadêmica da UFSM">Biblioteca Digital da UFSM</option>
+                    
+                        
+                        
+                        <option value="13" title="Biblioteca Setorial do Centro de Artes e Letras">Biblioteca Setorial do CAL</option>
+                    
+                        
+                        
+                        <option value="7" title="Biblioteca Setorial do Centro de Ciências Naturais e Exatas">Biblioteca Setorial do CCNE</option>
+                    
+                        
+                        
+                        <option value="6" title="Biblioteca Setorial do Centro de Ciências Rurais">Biblioteca Setorial do CCR</option>
+                    
+                        
+                        
+                        <option value="2" title="Biblioteca Setorial do Centro de Ciências Sociais e Humanas">Biblioteca Setorial do CCSH</option>
+                    
+                        
+                        
+                        <option value="34" title="Biblioteca Setorial do Centro de Ciências Sociais e Humanas - Acervo Centro">Biblioteca Setorial do CCSH - Acervo Centro</option>
+                    
+                        
+                        
+                        <option value="4" title="Biblioteca Setorial do Centro de Educação">Biblioteca Setorial do CE</option>
+                    
+                        
+                        
+                        <option value="8" title="Biblioteca Setorial do Centro de Educação Física e Desportos">Biblioteca Setorial do CEFD</option>
+                    
+                        
+                        
+                        <option value="32" title="Biblioteca Setorial do Colégio Politécnico">Biblioteca Setorial do Colégio Politécnico</option>
+                    
+                        
+                        
+                        <option value="9" title="Biblioteca Setorial do Centro de Tecnologia">Biblioteca Setorial do CT</option>
+                    
+                        
+                        
+                        <option value="25" title="Biblioteca Setorial do Colégio Técnico Industrial de Santa Maria">Biblioteca Setorial do CTISM</option>
+                    
+                        
+                        
+                        <option value="10" title="BSCAFW - Frederico Westphalen">BSCAFW - Frederico Westphalen</option>
+                    
+                        
+                        
+                        <option value="28" title="BSCS - Cachoeira do Sul">BSCS - Cachoeira do Sul</option>
+                    
+                        
+                        
+                        <option value="16" title="BSFW - Frederico Westphalen">BSFW -  Frederico Westphalen</option>
+                    
+                        
+                        
+                        <option value="18" title="BSPM - Palmeira das Missões">BSPM - Palmeira das Missões</option>
+                    
+                        
+                        
+                        <option value="5" title="BSUDESSM - Silveira Martins">BSUDESSM - Silveira Martins</option>
+                    
+                </select>
+            </div>
+            <div class="span3">
+                <span class="label" id="LabelTag_Iqr8sDXlvn5VshUa">Coleção</span>
+<br>
+
+                <select name="colecao" id="colecao" size="5" multiple="true" class="selectfield table-refresh-enter">
+                </select>
+            </div>
+
+            <div class="span2">
+                <span class="label" id="LabelTag_Et7DxeBGTyfCoIma">Idioma</span>
+<br>
+
+                <select name="idioma" id="idioma" size="5" multiple="true" class="selectfield table-refresh-enter">
+                    
+                        
+                        
+                        <option value="331">Português</option>
+                    
+                        
+                        
+                        <option value="114">Inglês</option>
+                    
+                        
+                        
+                        <option value="382">Espanhol</option>
+                    
+                        
+                        
+                        <option value="131">Francês</option>
+                    
+                        
+                        
+                        <option value="146">Alemão</option>
+                    
+                        
+                        
+                        <option value="194">Italiano</option>
+                    
+                        
+                        
+                        <option value="74">Chinês</option>
+                    
+                        
+                        
+                        <option value="221">Coreano</option>
+                    
+                        
+                        
+                        <option value="96">Dinamarquês</option>
+                    
+                        
+                        
+                        <option value="107">Holandês</option>
+                    
+                        
+                        
+                        <option value="196">Japonês</option>
+                    
+                        
+                        
+                        <option value="237">Latim</option>
+                    
+                        
+                        
+                        <option value="1397">Macua</option>
+                    
+                        
+                        
+                        <option value="301">Norueguês</option>
+                    
+                        
+                        
+                        <option value="329">Polonês</option>
+                    
+                        
+                        
+                        <option value="1398">Ronga</option>
+                    
+                        
+                        
+                        <option value="344">Russo</option>
+                    
+                        
+                        
+                        <option value="393">Sueco</option>
+                    
+                        
+                        
+                        <option value="94">Tcheco</option>
+                    
+                        
+                        
+                        <option value="368">Tcheco-eslovaco</option>
+                    
+                        
+                        
+                        <option value="434">Ucraniano</option>
+                    
+                        
+                        
+                        <option value="1462">Arawá</option>
+                    
+                        
+                        
+                        <option value="1480">Jê</option>
+                    
+                        
+                        
+                        <option value="1499">sai</option>
+                    
+                        
+                        
+                        <option value="1479">Tupi-guarani</option>
+                    
+                        
+                        
+                        <option value="1500">Xavante</option>
+                    
+                </select>
+            </div>
+            <div class="span3">
+                <span class="label" id="LabelTag_qU8robgXsv7aOFxs">Material</span>
+<br>
+
+                <select name="material" id="material" size="5" multiple="true" class="selectfield table-refresh-enter">
+                    
+                        
+                        
+                        <option value="40">Livro</option>
+                    
+                        
+                        
+                        <option value="31">Periódico</option>
+                    
+                        
+                        
+                        <option value="26">Tese - UFSM</option>
+                    
+                        
+                        
+                        <option value="36">Tese</option>
+                    
+                        
+                        
+                        <option value="55">Dissertação - UFSM</option>
+                    
+                        
+                        
+                        <option value="56">Dissertação</option>
+                    
+                        
+                        
+                        <option value="57">Monografia Especialização - UFSM</option>
+                    
+                        
+                        
+                        <option value="58">Monografia Especialização</option>
+                    
+                        
+                        
+                        <option value="54">Artigo Especialização - UFSM</option>
+                    
+                        
+                        
+                        <option value="53">Artigo Especialização</option>
+                    
+                        
+                        
+                        <option value="52">Trabalho Acadêmico</option>
+                    
+                        
+                        
+                        <option value="43">Artigo de periódico</option>
+                    
+                        
+                        
+                        <option value="59">Audiolivro</option>
+                    
+                        
+                        
+                        <option value="48">Braille</option>
+                    
+                        
+                        
+                        <option value="51">Cartaz</option>
+                    
+                        
+                        
+                        <option value="32">Cassete sonoro</option>
+                    
+                        
+                        
+                        <option value="47">CD</option>
+                    
+                        
+                        
+                        <option value="28">CD-ROM</option>
+                    
+                        
+                        
+                        <option value="29">Disco de vinil</option>
+                    
+                        
+                        
+                        <option value="27">Disquete</option>
+                    
+                        
+                        
+                        <option value="34">DVD</option>
+                    
+                        
+                        
+                        <option value="39">Fita de vídeo</option>
+                    
+                        
+                        
+                        <option value="35">Folheto</option>
+                    
+                        
+                        
+                        <option value="50">Fotografia</option>
+                    
+                        
+                        
+                        <option value="38">Mapa</option>
+                    
+                        
+                        
+                        <option value="49">Norma técnica</option>
+                    
+                        
+                        
+                        <option value="41">Partitura</option>
+                    
+                        
+                        
+                        <option value="62">Jogos</option>
+                    
+                        
+                        
+                        <option value="63">E-book</option>
+                    
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="span6">
+                <button id="clean-btn" type="button" class="btn small"><i class="icon-eraser"></i> Limpar</button>
+                <button id="search-btn2" type="button" class="btn primary small table-refresh">
+                    <i class="icon-search"></i> Pesquisar</button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="span12">
+            <input type="checkbox" name="aguardar" id="aguardar">
+            <label for="esperar">Vou aguardar a pesquisa concluir mesmo que demore</label>
+        </div>
+    </div>
+
+</div>
+
+<div id="tableResultado" class="box no-margin bordered rounded shadowed" style="display: block;"><div class="no-print" style="overflow: auto;"><div style="display: inline-block;"><select class="selectfield width-auto" aria-label="Ir para"><option value="1">Ir para 1</option><option value="2">Ir para 2</option><option value="3">Ir para 3</option><option value="4">Ir para 4</option><option value="5">Ir para 5</option><option value="6">Ir para 6</option><option value="7">Ir para 7</option><option value="8">Ir para 8</option></select></div> <div style="display: inline-block;"><select class="selectfield width-auto" aria-label="Itens por página"><option value="20">20 por página</option><option value="40">40 por página</option><option value="60">60 por página</option><option value="80">80 por página</option><option value="100">100 por página</option></select></div> <div class="pagination small inline-block pull-right"><ul><li id="first_0" class="disabled"><span><span aria-hidden="true">«</span><span class="sr-only">Primeira página</span></span></li><li id="previous_0" class="disabled"><span><span aria-hidden="true">‹</span><span class="sr-only">Página anterior</span></span></li><li id="page1_0" class="active"><span>1</span></li><li id="page2_0"><a href="javascript:void(0);">2</a></li><li id="page3_0"><a href="javascript:void(0);">3</a></li><li id="page4_0"><a href="javascript:void(0);">4</a></li><li id="page5_0"><a href="javascript:void(0);">5</a></li><li id="page6_0"><a href="javascript:void(0);">6</a></li><li id="page7_0"><a href="javascript:void(0);">7</a></li><li id="next_0"><a title="Próxima página" href="javascript:void(0);"><span aria-hidden="true">›</span><span class="sr-only">Próxima página</span></a></li><li id="last_0"><a title="Última página" href="javascript:void(0);"><span aria-hidden="true">»</span><span class="sr-only">Última página</span></a></li></ul></div></div><div class="table-wrapper stroked margin-v"><table class="table narrow striped compact" style="display: table;"><thead class="header"><tr><th style="width: 4em;" title=""></th><th title=""><div class="innerDiv" style="display: inline-block; cursor: pointer;">Título</div></th><th style="width: 25%;" title=""><div class="innerDiv" style="display: inline-block; cursor: pointer;">Autor</div></th><th class="hidden-phone" style="width: 8em;" title=""><div class="innerDiv" style="display: inline-block; cursor: pointer;">Material</div></th><th class="hidden-phone" style="width: 7em;" title=""><div class="innerDiv" style="display: inline-block; cursor: pointer;">Edição</div></th><th class="hidden-phone" style="width: 5em;" title=""><div class="innerDiv" style="display: inline-block; cursor: pointer;">Ano</div></th></tr></thead><tbody><tr style=""><td><div class="btn-group mini"><a href="/biblioteca/pesquisa/registro.html?idRegistro=307685" class="btn"><span class="icon-folder-open" aria-hidden="true"></span> </a></div></td><td title="ABNT NBR ISO/IEC 14598-6 : engenharia de software : avaliacao de produto : parte 6 : documentacao de modulos de avaliacao /">ABNT NBR ISO/IEC 14598-6 : engenharia de software : avaliacao de produto : parte 6 : documentacao de modulos de avaliacao /</td><td title="Associação Brasileira de Normas Técnicas">Associação Brasileira de Normas Técnicas</td><td class="hidden-phone" title="Norma técnica">Norma técnica</td><td class="hidden-phone" title="1. ed.">1. ed.</td><td class="hidden-phone" title="2004.">2004.</td></tr><tr style=""><td><div class="btn-group mini"><a href="/biblioteca/pesquisa/registro.html?idRegistro=455273" class="btn"><span class="icon-folder-open" aria-hidden="true"></span> </a><a href="http://repositorio.ufsm.br/handle/1/14903" class="btn"><span class="icon-external-link-sign" aria-hidden="true"></span> </a></div></td><td title="Desenvolvimento de um sistema de recepção de imagens de satélite meteorológico e correção automática das imagens tipo LRPT">Desenvolvimento de um sistema de recepção de imagens de satélite meteorológico e correção automática das imagens tipo LRPT</td><td title="Flores, Rodrigo Dias">Flores, Rodrigo Dias</td><td class="hidden-phone" title="Dissertação - UFSM">Dissertação - UFSM</td><td class="hidden-phone" title=""></td><td class="hidden-phone" title="2018">2018</td></tr><tr style=""><td><div class="btn-group mini"><a href="/biblioteca/pesquisa/registro.html?idRegistro=399480" class="btn"><span class="icon-folder-open" aria-hidden="true"></span> </a></div></td><td title="Engenharia de software : os paradigmas clássico &amp; orientado a objetos /">Engenharia de software : os paradigmas clássico &amp; orientado a objetos /</td><td title="Schach, Stephen R.">Schach, Stephen R.</td><td class="hidden-phone" title="Livro">Livro</td><td class="hidden-phone" title="7. ed.">7. ed.</td><td class="hidden-phone" title="2009.">2009.</td></tr><tr style=""><td><div class="btn-group mini"><a href="/biblioteca/pesquisa/registro.html?idRegistro=309739" class="btn"><span class="icon-folder-open" aria-hidden="true"></span> </a></div></td><td title="Extreme programming : aprenda como encantar seus usuarios desenvolvendo software com agilidade e alta qualidade /">Extreme programming : aprenda como encantar seus usuarios desenvolvendo software com agilidade e alta qualidade /</td><td title="Teles, Vinicius Manhaes">Teles, Vinicius Manhaes</td><td class="hidden-phone" title="Livro">Livro</td><td class="hidden-phone" title=""></td><td class="hidden-phone" title="c2004">c2004</td></tr><tr style=""><td><div class="btn-group mini"><a href="/biblioteca/pesquisa/registro.html?idRegistro=448116" class="btn"><span class="icon-folder-open" aria-hidden="true"></span> </a><a href="http://repositorio.ufsm.br/handle/1/14644" class="btn"><span class="icon-external-link-sign" aria-hidden="true"></span> </a></div></td><td title="Fatores críticos para o resultado de projetos de desenvolvimento de software um estudo nas organizações brasileiras">Fatores críticos para o resultado de projetos de desenvolvimento de software um estudo nas organizações brasileiras</td><td title="Dal Forno, Gédson Mário Borges">Dal Forno, Gédson Mário Borges</td><td class="hidden-phone" title="Tese - UFSM">Tese - UFSM</td><td class="hidden-phone" title=""></td><td class="hidden-phone" title="2017">2017</td></tr><tr style=""><td><div class="btn-group mini"><a href="/biblioteca/pesquisa/registro.html?idRegistro=398056" class="btn"><span class="icon-folder-open" aria-hidden="true"></span> </a></div></td><td title="Ferramenta de auxílio na garantia de qualidade de software baseado no modelo MPS.BR /">Ferramenta de auxílio na garantia de qualidade de software baseado no modelo MPS.BR /</td><td title="Andrade, Guilherme Albrecht Kruel de">Andrade, Guilherme Albrecht Kruel de</td><td class="hidden-phone" title="Trabalho Academico">Trabalho Academico</td><td class="hidden-phone" title=""></td><td class="hidden-phone" title="2013.">2013.</td></tr><tr style=""><td><div class="btn-group mini"><a href="/biblioteca/pesquisa/registro.html?idRegistro=395995" class="btn"><span class="icon-folder-open" aria-hidden="true"></span> </a></div></td><td title="Garantia da qualidade de software [as melhores práticas de engenharia de software aplicadas à sua empresa]">Garantia da qualidade de software [as melhores práticas de engenharia de software aplicadas à sua empresa]</td><td title="Bartié, Alexandre">Bartié, Alexandre</td><td class="hidden-phone" title="Livro">Livro</td><td class="hidden-phone" title=""></td><td class="hidden-phone" title="c2002">c2002</td></tr><tr style=""><td><div class="btn-group mini"><a href="/biblioteca/pesquisa/registro.html?idRegistro=396001" class="btn"><span class="icon-folder-open" aria-hidden="true"></span> </a></div></td><td title="Introdução ao teste de software /">Introdução ao teste de software /</td><td title="Delamaro, Márcio, 1963-">Delamaro, Márcio, 1963-</td><td class="hidden-phone" title="Livro">Livro</td><td class="hidden-phone" title=""></td><td class="hidden-phone" title="c2007.">c2007.</td></tr><tr style=""><td><div class="btn-group mini"><a href="/biblioteca/pesquisa/registro.html?idRegistro=433748" class="btn"><span class="icon-folder-open" aria-hidden="true"></span> </a></div></td><td title="Itil">Itil</td><td title="Cougo, Paulo Sergio">Cougo, Paulo Sergio</td><td class="hidden-phone" title="Livro">Livro</td><td class="hidden-phone" title=""></td><td class="hidden-phone" title="2013">2013</td></tr><tr style=""><td><div class="btn-group mini"><a href="/biblioteca/pesquisa/registro.html?idRegistro=73487" class="btn"><span class="icon-folder-open" aria-hidden="true"></span> </a></div></td><td title="Melhorando a qualidade do software : um guia completo para o TQM /">Melhorando a qualidade do software : um guia completo para o TQM /</td><td title="Arthur, Lowell Jay">Arthur, Lowell Jay</td><td class="hidden-phone" title="Livro">Livro</td><td class="hidden-phone" title=""></td><td class="hidden-phone" title="c1994">c1994</td></tr><tr style=""><td><div class="btn-group mini"><a href="/biblioteca/pesquisa/registro.html?idRegistro=307660" class="btn"><span class="icon-folder-open" aria-hidden="true"></span> </a></div></td><td title="NBR ISO/IEC 12119 : tecnologia de informacao : pacotes de software : teste e requisitos de qualidade /">NBR ISO/IEC 12119 : tecnologia de informacao : pacotes de software : teste e requisitos de qualidade /</td><td title="Associação Brasileira de Normas Técnicas">Associação Brasileira de Normas Técnicas</td><td class="hidden-phone" title="Norma técnica">Norma técnica</td><td class="hidden-phone" title=""></td><td class="hidden-phone" title="1998.">1998.</td></tr><tr style=""><td><div class="btn-group mini"><a href="/biblioteca/pesquisa/registro.html?idRegistro=307662" class="btn"><span class="icon-folder-open" aria-hidden="true"></span> </a></div></td><td title="NBR ISO/IEC 14598-1 : tecnologia de informacao : avaliacao de produto de software : parte 1 : visao geral /">NBR ISO/IEC 14598-1 : tecnologia de informacao : avaliacao de produto de software : parte 1 : visao geral /</td><td title="Associação Brasileira de Normas Técnicas">Associação Brasileira de Normas Técnicas</td><td class="hidden-phone" title="Norma técnica">Norma técnica</td><td class="hidden-phone" title=""></td><td class="hidden-phone" title="2001.">2001.</td></tr><tr style=""><td><div class="btn-group mini"><a href="/biblioteca/pesquisa/registro.html?idRegistro=307663" class="btn"><span class="icon-folder-open" aria-hidden="true"></span> </a></div></td><td title="NBR ISO/IEC 14598-2 : engenharia de software : avaliacao de produto : parte 2 : planejamento e gestao /">NBR ISO/IEC 14598-2 : engenharia de software : avaliacao de produto : parte 2 : planejamento e gestao /</td><td title="Associação Brasileira de Normas Técnicas">Associação Brasileira de Normas Técnicas</td><td class="hidden-phone" title="Norma técnica">Norma técnica</td><td class="hidden-phone" title=""></td><td class="hidden-phone" title="2003.">2003.</td></tr><tr style=""><td><div class="btn-group mini"><a href="/biblioteca/pesquisa/registro.html?idRegistro=307682" class="btn"><span class="icon-folder-open" aria-hidden="true"></span> </a></div></td><td title="NBR ISO/IEC 14598-3 : engenharia de software : avaliacao de produto : parte 3 : processo para desenvolvedores /">NBR ISO/IEC 14598-3 : engenharia de software : avaliacao de produto : parte 3 : processo para desenvolvedores /</td><td title="Associação Brasileira de Normas Técnicas">Associação Brasileira de Normas Técnicas</td><td class="hidden-phone" title="Norma técnica">Norma técnica</td><td class="hidden-phone" title=""></td><td class="hidden-phone" title="2003 .">2003 .</td></tr><tr style=""><td><div class="btn-group mini"><a href="/biblioteca/pesquisa/registro.html?idRegistro=307684" class="btn"><span class="icon-folder-open" aria-hidden="true"></span> </a></div></td><td title="NBR ISO/IEC 14598-5 : tecnologia de informacao : avaliacao de produto de software : parte 5 : processo para avaliadores /">NBR ISO/IEC 14598-5 : tecnologia de informacao : avaliacao de produto de software : parte 5 : processo para avaliadores /</td><td title="Associação Brasileira de Normas Técnicas">Associação Brasileira de Normas Técnicas</td><td class="hidden-phone" title="Norma técnica">Norma técnica</td><td class="hidden-phone" title=""></td><td class="hidden-phone" title="2001.">2001.</td></tr><tr style=""><td><div class="btn-group mini"><a href="/biblioteca/pesquisa/registro.html?idRegistro=307659" class="btn"><span class="icon-folder-open" aria-hidden="true"></span> </a></div></td><td title="NBR ISO/IEC 9126-1 : engenharia de software : qualidade de produto : parte 1: modelo de qualidade /">NBR ISO/IEC 9126-1 : engenharia de software : qualidade de produto : parte 1: modelo de qualidade /</td><td title="Associação Brasileira de Normas Técnicas">Associação Brasileira de Normas Técnicas</td><td class="hidden-phone" title="Norma técnica">Norma técnica</td><td class="hidden-phone" title=""></td><td class="hidden-phone" title="2003.">2003.</td></tr><tr style=""><td><div class="btn-group mini"><a href="/biblioteca/pesquisa/registro.html?idRegistro=392698" class="btn"><span class="icon-folder-open" aria-hidden="true"></span> </a></div></td><td title="O uso de softwares no processo de ensino e aprendizagem da matemática no 6º ano do ensino fundamental da E. M. E. F. Padre Antonio Michels [documento eletrônico] /">O uso de softwares no processo de ensino e aprendizagem da matemática no 6º ano do ensino fundamental da E. M. E. F. Padre Antonio Michels [documento eletrônico] /</td><td title="Hunhoff, Fabiane">Hunhoff, Fabiane</td><td class="hidden-phone" title=""></td><td class="hidden-phone" title=""></td><td class="hidden-phone" title="2011.">2011.</td></tr><tr style=""><td><div class="btn-group mini"><a href="/biblioteca/pesquisa/registro.html?idRegistro=395812" class="btn"><span class="icon-folder-open" aria-hidden="true"></span> </a></div></td><td title="Qualidade de software : aprenda as metodologias e técnicas mais modernas para o desenvolvimento de software /">Qualidade de software : aprenda as metodologias e técnicas mais modernas para o desenvolvimento de software /</td><td title="Koscianski, André, 1970-">Koscianski, André, 1970-</td><td class="hidden-phone" title="Livro">Livro</td><td class="hidden-phone" title="2. ed.">2. ed.</td><td class="hidden-phone" title="2012.">2012.</td></tr><tr style=""><td><div class="btn-group mini"><a href="/biblioteca/pesquisa/registro.html?idRegistro=448623" class="btn"><span class="icon-folder-open" aria-hidden="true"></span> </a></div></td><td title="Qualidade de software na prática como reduzir o custo de manutenção de software com a análise de código">Qualidade de software na prática como reduzir o custo de manutenção de software com a análise de código</td><td title="Sampaio, Cleuton">Sampaio, Cleuton</td><td class="hidden-phone" title="Livro">Livro</td><td class="hidden-phone" title=""></td><td class="hidden-phone" title="2014">2014</td></tr><tr style=""><td><div class="btn-group mini"><a href="/biblioteca/pesquisa/registro.html?idRegistro=441608" class="btn"><span class="icon-folder-open" aria-hidden="true"></span> </a></div></td><td title="Relação entre transparência da água obtida in situ e a reflectância da imagem landsat 5 tm do reservatório passo real [documento eletrônico]">Relação entre transparência da água obtida in situ e a reflectância da imagem landsat 5 tm do reservatório passo real [documento eletrônico]</td><td title="Santos, Felipe Correa dos">Santos, Felipe Correa dos</td><td class="hidden-phone" title=""></td><td class="hidden-phone" title=""></td><td class="hidden-phone" title="2014">2014</td></tr></tbody></table></div><div class="no-print" style="overflow: auto;"><div class="dimmed no-print pull-left">Mostrando do 1 ao 20 de 152 resultados.</div> <div class="pagination small inline-block pull-right"><ul><li id="first_0" class="disabled"><span><span aria-hidden="true">«</span><span class="sr-only">Primeira página</span></span></li><li id="previous_0" class="disabled"><span><span aria-hidden="true">‹</span><span class="sr-only">Página anterior</span></span></li><li id="page1_0" class="active"><span>1</span></li><li id="page2_0"><a href="javascript:void(0);">2</a></li><li id="page3_0"><a href="javascript:void(0);">3</a></li><li id="page4_0"><a href="javascript:void(0);">4</a></li><li id="page5_0"><a href="javascript:void(0);">5</a></li><li id="page6_0"><a href="javascript:void(0);">6</a></li><li id="page7_0"><a href="javascript:void(0);">7</a></li><li id="next_0"><a title="Próxima página" href="javascript:void(0);"><span aria-hidden="true">›</span><span class="sr-only">Próxima página</span></a></li><li id="last_0"><a title="Última página" href="javascript:void(0);"><span aria-hidden="true">»</span><span class="sr-only">Última página</span></a></li></ul></div></div></div>
+
+
+
+<script type="text/javascript" src="/biblioteca/dwr/interface/registroBibliograficoAjax.js"></script>
+<script type="text/javascript" src="/biblioteca/dwr/interface/colecaoAjaxService.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        function showPesquisaAvancada() {
+            $("#pesquisaAvancada").show("slow");
+            $("#btnAvancada i").removeClass().addClass('icon-zoom-out');
+            $('#geral').val('').attr('readonly', true);
+        }
+
+        function hidePesquisaAvancada() {
+            $("#pesquisaAvancada").hide("slow");
+            $("#btnAvancada i").removeClass().addClass('icon-zoom-in');
+            $('#geral').removeAttr('readonly');
+        }
+
+        $('#btnAvancada').click(function () {
+            if ($("#pesquisaAvancada").is(":hidden")) {
+                showPesquisaAvancada();
+            } else {
+                hidePesquisaAvancada();
+            }
+        });
+
+        /* inicializa o paginador */
+        $('#tableResultado').ajaxTable({
+            ajaxTable: registroBibliograficoAjax,
+            refreshOnCreate: false,
+            hideOnCreate: true,
+            startPage: 1,
+            toolbar: {
+                position: 'both',
+                perPage: {
+                    values: [20, 40, 60, 80, 100],
+                    selectedIndex: 0
+                }
+            },
+            externalParams: {
+                containerId: 'searchParams'
+            },
+            error: {
+                handler: function (errorString, exception) {
+                    if (exception.javaClassName === "br.ufsm.cpd.sie.core.exception.SilentRegraNegocioException") {
+                        $('#_geral').text(errorString);
+                        $('#_geral').show();
+                    } else {
+                        var link = this.redirectLink;
+                        var paramName = this.messageParamName;
+                        if ($.ObjectUtils.isValued(exception.cause)) {
+                            link = link + "?" + paramName + "=" + exception.cause.message;
+                        } else {
+                            link = link + "?" + paramName + "=" + exception.message;
+                        }
+                        window.location = link;
+                    }
+                },
+                redirectLink: '/biblioteca/error/errorMsg.html'
+            },
+            ordering: {
+                enabled: true,
+                orderBy: "",
+                orderMode: ""
+            },
+            table: {
+                wrapper: {
+                    class: 'table-wrapper stroked margin-v'
+                },
+                postAddLines: function () {
+                    var quantItens = $('#tableResultado').ajaxTable("totalItems");
+                    if (quantItens > 0 && $("#pesquisaAvancada").is(':visible')) {
+                        hidePesquisaAvancada();
+                    }
+                },
+                classExt: 'compact',
+                columns: [
+                    {
+                        headerCell: '',
+                        headerCellStyle: 'width: 4em;',
+                        /* cria uma coluna com os botoes de ação para editar, excluir aplicação */
+                        bodyCell: function (item) {
+                            var $actions = $('<div>', {'class': 'btn-group mini'});
+                            $actions.append(
+                                $.WidgetUtils.createElement({
+                                    'tagName': '<a>',
+                                    'class': 'btn',
+                                    'icon': 'icon-folder-open',
+                                    'href': '/biblioteca/pesquisa/registro.html?idRegistro=' + item.id
+                                })
+                            );
+                            if (item.enderecoEletronico) {
+                                var href = item.protegido ? '/biblioteca/leitor/superseguro.html?idRegistro=' + item.id : item.enderecoEletronico;
+                                $actions.append(
+                                    $.WidgetUtils.createElement({
+                                        'tagName': '<a>',
+                                        'class': 'btn',
+                                        'icon': 'icon-external-link-sign',
+                                        'href': href
+                                    })
+                                );
+                            }
+                            return $('<td>').append($actions);
+                        }
+                    },
+                    {
+                        name: "tituloOrdenacao",
+                        headerCell: 'Título',
+                        bodyCell: '@{tituloCompleto}',
+                        bodyCellTitle: '@{tituloCompleto}'
+                    },
+                    {
+                        name: "autor",
+                        headerCell: 'Autor',
+                        bodyCell: '@{autor}',
+                        bodyCellTitle: '@{autor}',
+                        headerCellStyle: 'width: 25%;'
+                    },
+                    {
+                        name: "material",
+                        headerCell: 'Material',
+                        bodyCell: '@{material}',
+                        bodyCellTitle: '@{material}',
+                        headerCellStyle: 'width: 8em;',
+                        bodyCellClass: 'hidden-phone',
+                        headerCellClass: 'hidden-phone'
+                    },
+                    {
+                        name: "edicao",
+                        headerCell: 'Edição',
+                        bodyCell: '@{edicao}',
+                        bodyCellTitle: '@{edicao}',
+                        headerCellStyle: 'width: 7em;',
+                        bodyCellClass: 'hidden-phone',
+                        headerCellClass: 'hidden-phone'
+                    },
+                    {
+                        name: "dataBibliografico",
+                        headerCell: 'Ano',
+                        bodyCell: '@{dataBibliografico}',
+                        bodyCellTitle: '@{dataBibliografico}',
+                        headerCellStyle: 'width: 5em;',
+                        bodyCellClass: 'hidden-phone',
+                        headerCellClass: 'hidden-phone'
+                    }
+                ]
+            }
+        });
+
+        $("#geral").focus(function (event) {
+            var input = $(this);
+            var placeholder = input.attr('placeholder');
+            input.removeAttr('placeholder');
+            input.attr('data-placeholder', placeholder);
+        });
+        $("#geral").blur(function (event) {
+            var input = $(this);
+            var placeholder = input.attr('data-placeholder');
+            input.attr('placeholder', placeholder);
+        });
+
+        $('#clean-btn').click(function () {
+            limpaCamposPesquisaAvancada();
+        });
+
+        function limpaCamposPesquisaAvancada() {
+            $('#autor').val("");
+            $('#titulo').val("");
+            $('#assunto').val("");
+            $('#ano').val("");
+            $('#livre').val("");
+            $('#biblioteca').val("");
+            $('#colecao').val("");
+            $('#colecao').html("");
+            $('#idioma').val("");
+            $('#material').val("");
+        };
+
+        $("#biblioteca").click(function (event) {
+            const $biblioteca = $(this);
+            const $colecao = $("#colecao");
+            const idBiblioteca = event.target.value;
+            $colecao.html('');
+            if ($biblioteca.val().length == 1 && idBiblioteca) {
+                colecaoAjaxService.findByBiblioteca(idBiblioteca, {
+                    'async': false,
+                    'callback': function (lista) {
+                        if (lista && lista.length > 0) {
+                            lista.forEach(c => {
+                                $("<option>", {value: c.id, title: c.nome, text: c.nome}).appendTo($colecao)
+                            });
+                        }
+                    }
+                })
+            }
+        })
+    });
+</script>
+        </div>
+    </div>
+    <!-- footer -->
+    <footer id="app_bottom" class="band footer mini-font-size no-print">
+        <div class="container narrow stroked-top">
+            <div class="row">
+                <div class="span6">
+                    <span class="dimmed">Portal Biblioteca - Versão 1.6.17</span>
+                </div>
+                <div class="span6 align-right-tablet-desktop">
+                    <span class="dimmed">Copyright © 2022 CPD-UFSM. Todos os direitos reservados.</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#app_top').govbar();
+            $('#app_top').skiplinks();
+        });
+    </script>
+
+
+
+</body></html>

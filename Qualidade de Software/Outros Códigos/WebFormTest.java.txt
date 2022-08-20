@@ -1,0 +1,196 @@
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
+
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.time.Duration;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Set;
+import java.util.concurrent.TimeUnit;
+
+
+import org.junit.Ignore;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class WebFormTest {
+
+	//objeto que contém os métodos que controlam o navegador web
+	private static WebDriver driver;
+	WebElement element;
+
+		
+	@BeforeAll
+    public static void openBrowser(){		
+		System.setProperty("webdriver.chrome.driver", "C://UFSM//2022//semestre_1//qualidade_software//Selenium_Files//chromedriver_win32//chromedriver.exe");
+		driver= new ChromeDriver();    	
+		driver.manage().window().maximize();		
+		//Deleting all the cookies
+		driver.manage().deleteAllCookies();
+		driver.get("https://bonigarcia.dev/selenium-webdriver-java/web-form.html");
+	} 
+	// Método que finaliza o teste, fechando a instância do WebDriver.    
+	 @AfterAll
+	 public static void closeBrowser(){
+		 driver.quit();
+	 }
+
+	// Testa título "Hands-On Selenium WebDriver with Java".
+	@Test
+	public void testaTituloDaPagina(){
+		assertEquals("Hands-On Selenium WebDriver with Java", driver.getTitle());		
+	    System.out.println(driver.getTitle());
+	}
+	
+	
+	/*<select class="form-select" name="my-select">
+    <option selected="">Open this select menu</option>
+    <option value="1">One</option>
+    <option value="2">Two</option>
+    <option value="3">Three</option>
+  </select>*/
+  
+	@Test
+	//Dropdown (select)
+	public void testaComboBox1(){
+		Select combo = new Select(driver.findElement(By.name("my-select")));
+		String str = combo.getFirstSelectedOption().getText();
+		assertEquals("Open this select menu",str);
+		System.out.println(str);
+	}
+	
+	
+		@Test
+		public void testaComboBox2(){ 
+			Select combo = new Select(driver.findElement(By.name("my-select")));
+			int tam = combo.getOptions().size();		 
+			assertEquals(4,tam);
+			
+		}
+
+		
+		@Test
+		public void testaComboBoxElements3(){
+			Select combo = new Select(driver.findElement(By.name("my-select")));
+			List<WebElement> opcoes = combo.getOptions();
+			List retornada = new LinkedList();		
+			for (WebElement conteudo : opcoes)
+			{
+				retornada.add(conteudo.getText());
+			}
+
+			List esperada = new LinkedList();
+			esperada.add("Open this select menu");
+			esperada.add("One");
+			esperada.add("Two");
+			esperada.add("Three");
+
+			assertEquals(esperada,retornada);
+
+		}
+	
+	
+	/**<label class="form-check-label w-100">
+    <input class="form-check-input" type="radio" name="my-radio" id="my-radio-1" checked="">
+    Checked radio
+    </label>**/	
+	@Test
+	public void testaChecked_radio(){
+		element = driver.findElement(By.id("my-radio-1"));
+		System.out.println("testaChecked_radio "+element.isSelected());
+		assertTrue(element.isSelected());		
+	}
+	
+	
+	/**
+	 * <label class="form-check-label w-100">
+       <input class="form-check-input" type="radio" name="my-radio" id="my-radio-2">
+       Default radio
+       </label>
+	 */
+	@Test
+	public void testaDefault_radio(){
+		element = driver.findElement(By.id("my-radio-2"));
+		System.out.println("testaDefault_radio "+element.isSelected());
+		assertFalse(element.isSelected());		
+	}
+
+	/**
+	 * Submit button
+	 * <button type="submit" class="btn btn-outline-primary mt-3">Submit</button>
+	 */
+	@Test
+	public void testaSubmitButton1(){
+		element = driver.findElement(By.className("btn-outline-primary"));
+		System.out.println("testaSubmitButton1 "+element.isEnabled());
+		assertEquals("Submit",element.getText());
+		System.out.println("texto do button "+element.getText());
+		//element.submit(); 
+		//System.out.println("submeteu ");
+		
+	}  
+	
+	/**
+	 * <input type="text" class="form-control" name="my-text" id="my-text-id" myprop="myvalue">
+	 */
+	@Test
+	public void testaText_input(){
+		element = driver.findElement(By.name("my-text"));		 	 
+		assertEquals("",element.getText());		
+	}  
+	
+	
+	//ver se está válido/quebrado
+		@Test
+		public void testaLink1(){
+			element = driver.findElement(By.linkText("Return to index"));
+			String link = element.getAttribute("href");
+			boolean isValid = verificaConexao(link);
+			assertTrue(isValid);
+			System.out.println("testaLink1: "+link);
+		} 
+		
+		
+		public static boolean verificaConexao(String urlString) {
+			boolean isValid = false;
+			try {
+				URL u = new URL(urlString);
+				HttpURLConnection h = (HttpURLConnection) u.openConnection();
+				h.setRequestMethod("GET");
+				h.connect();
+				System.out.println(h.getResponseCode());
+				if (h.getResponseCode() != h.HTTP_NOT_FOUND) { //404 HTTP_OK
+					isValid = true;
+				}
+			} catch (Exception e) {
+
+			}
+			return isValid;
+		}
+		
+		
+		//ver se link leva para a página que se gostaria
+		@Test
+		public void testaLink2(){
+			element = driver.findElement(By.linkText("Return to index"));
+			String link = element.getAttribute("href");			 
+			assertTrue(link.equals("https://bonigarcia.dev/selenium-webdriver-java/index.html"));		
+		}
+		
+		
+
+}
+
+

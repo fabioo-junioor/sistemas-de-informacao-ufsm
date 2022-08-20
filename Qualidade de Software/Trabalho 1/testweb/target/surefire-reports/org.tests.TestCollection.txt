@@ -1,0 +1,18 @@
+-------------------------------------------------------------------------------
+Test set: org.tests.TestCollection
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 21.07 s <<< FAILURE! - in org.tests.TestCollection
+testCollectionTableFail(org.tests.TestCollection)  Time elapsed: 20.014 s  <<< FAILURE!
+com.codeborne.selenide.ex.ListSizeMismatch: 
+List size mismatch: expected: = 2, actual: 4, collection: #tblGastos tr
+Elements: [
+	<tr>Mês Gasto (R$)</tr>,
+	<tr>Janeiro R$250</tr>,
+	<tr>Fevereiro R$500</tr>,
+	<tr>Março R$5000</tr>
+]
+Screenshot: file:/C:/Users/Graxaim/Documents/NetBeansProjects/testweb/build/reports/tests/1655087741972.0.png
+Page source: file:/C:/Users/Graxaim/Documents/NetBeansProjects/testweb/build/reports/tests/1655087741972.0.html
+Timeout: 4 s.
+	at org.tests.TestCollection.testCollectionTableFail(TestCollection.java:31)
+

@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: org.tests.TestElements
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 6.178 s <<< FAILURE! - in org.tests.TestElements
+testElementFail(org.tests.TestElements)  Time elapsed: 5.547 s  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<...emento com id: texto[o]</div>> but was:<...emento com id: texto[]</div>>
+	at org.tests.TestElements.testElementFail(TestElements.java:46)
+

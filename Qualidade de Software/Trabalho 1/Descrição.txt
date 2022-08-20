@@ -1,0 +1,10 @@
+Enunciado: O grupo deve escolher e pesquisar sobre o grande tema "testes de unidade" (veja categorias abaixo).
+Precisa dar uma aula sobre a tecnologia/assunto escolhida. 
+Elaborar uma apresentação para a turma contendo todas essas informações. 
+Essa apresentação deverá ser submetida via Moodle em link apropriado. No máximo 2 pessoas.
+
+Categorias: 
+a) Ferramentas (lançadas com no máximo 3 anos de existência); 
+b) Pesquisa sobre testes de unidade (artigos de periódicos, congressos - vários artigos); 
+c) Estudos de casos (empresas que usam testes de software na prática e 
+que mudaram seus parâmetros de desenvolvimento e pessoas);

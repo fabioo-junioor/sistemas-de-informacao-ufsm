@@ -1,0 +1,88 @@
+import static org.junit.jupiter.api.Assertions.*;
+
+import java.time.Duration;
+import java.util.concurrent.TimeUnit;
+
+import org.junit.Assert;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+ 
+
+
+public class Ajaxdemo {
+	
+	//objeto que contém os métodos que controlam o navegador web
+  	private static WebDriver driver;
+  	private WebElement element;  	
+  	private static String URL = "https://demos.telerik.com/aspnet-ajax/ajaxloadingpanel/functionality/explicit-show-hide/defaultcs.aspx";
+    WebDriverWait wait;
+    
+    @BeforeAll
+    public static void openBrowser(){		
+		System.setProperty("webdriver.chrome.driver", "C://UFSM//2022//semestre_1//qualidade_software//Selenium_Files//chromedriver_win32//chromedriver.exe");
+		driver= new ChromeDriver();    	
+		driver.manage().window().maximize();		
+		//Deleting all the cookies
+		driver.manage().deleteAllCookies();
+		driver.get(URL);
+		//WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(1));
+	} 	 
+		
+	
+	@Test
+	public void test_AjaxExample() {	
+				
+		
+		
+		wait = new WebDriverWait(driver,Duration.ofSeconds(8));
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class='demo-container size-narrow']")));
+		
+		//String wednesdayJune = driver.findElement(By.xpath("//div[@class='RadAjaxPanel']//span[1]")).getText();
+		/*Get the text before performing an ajax call*/
+		WebElement noDatesTextElement = driver.findElement(By.xpath("//div[@class='RadAjaxPanel']//span[1]"));
+		String textBeforeAjaxCall = noDatesTextElement.getText().trim();
+		
+		System.out.println("first: "+textBeforeAjaxCall);
+		
+		/*Click on the date*/
+		driver.findElement(By.linkText("12")).click();
+	
+		/*Wait for loader to disappear */
+		//driver.manage().timeouts().implicitlyWait(Duration.ofMillis(9000));
+		//By loader = By.className("raDiv");
+		//wait = new WebDriverWait(driver,Duration.ofSeconds(5));
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("raDiv")));
+		
+		
+		
+		/*Get the text after ajax call*/                         
+		WebElement selectedDatesTextElement = driver.findElement(By.xpath("//div[@class='RadAjaxPanel']//span[1]"));
+		wait.until(ExpectedConditions.visibilityOf(selectedDatesTextElement));
+		String textAfterAjaxCall = selectedDatesTextElement.getText().trim();
+		System.out.println("second: "+textAfterAjaxCall); 
+		
+		
+		/*Verify both texts before ajax call and after ajax call text.*/
+		Assert.assertNotEquals(textBeforeAjaxCall, textAfterAjaxCall);
+		
+		String expectedTextAfterAjaxCall = "Tuesday, July 12, 2022";
+		
+		/*Verify expected text with text updated after ajax call*/
+		Assert.assertEquals(textAfterAjaxCall, expectedTextAfterAjaxCall);
+		
+	}
+	
+	// Método que finaliza o teste, fechando a instância do WebDriver.    
+		 @AfterAll
+		 public static void closeBrowser(){
+			 driver.quit();
+		 }
+	
+}

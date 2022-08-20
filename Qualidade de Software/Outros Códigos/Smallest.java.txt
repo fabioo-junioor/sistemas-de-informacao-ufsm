@@ -1,0 +1,23 @@
+package maior;
+
+public class Smallest {
+	
+	public static int smallest(int[] list)
+	{
+		if (list.length == 0) {
+			throw new RuntimeException(
+					"lista vazia"
+					);
+		}
+			
+		int index, min=list[0]; //A constant holding the maximum value an int can have, 2 31-1
+		for (index = 0; index < list.length; index++) 
+		{
+			if (list[index] < min) {
+				min = list[index];
+			}
+		}
+		return min;
+	}
+
+}

@@ -1,0 +1,48 @@
+package romanos;
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+
+public class ConversorRomanoTest {
+
+	@Test
+	public void converteOSimboloI() {
+		ConversorDeRomanos conversor  = new ConversorDeRomanos();
+		int obtido = conversor.converte("I");
+		//quero garantir que o valor real é 1 para o que foi retornado
+		assertEquals(1,obtido);
+	}
+	
+	@Test
+	public void converteOSimboloV() {
+		ConversorDeRomanos conversor  = new ConversorDeRomanos();
+		int obtido = conversor.converte("V");
+		assertEquals(5,obtido);
+	}
+	
+	
+	@Test
+	public void converteOSimboloII() {
+		ConversorDeRomanos conversor  = new ConversorDeRomanos();
+		int obtido = conversor.converte("II");
+		assertEquals(2,obtido);
+	}
+	
+	@Test
+	public void converteOSimboloXXII() {
+		ConversorDeRomanos conversor  = new ConversorDeRomanos();
+		int obtido = conversor.converte("XXII");
+		assertEquals(22,obtido);
+	}
+
+	@Test
+	public void converteOSimboloIX() {
+		ConversorDeRomanos conversor  = new ConversorDeRomanos();
+		int obtido = conversor.converte("IX");
+		assertEquals(9,obtido);
+	}
+	
+	
+	
+}

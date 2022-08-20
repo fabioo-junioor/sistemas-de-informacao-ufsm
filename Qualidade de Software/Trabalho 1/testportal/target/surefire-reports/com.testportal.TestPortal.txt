@@ -1,0 +1,21 @@
+-------------------------------------------------------------------------------
+Test set: com.testportal.TestPortal
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 15.239 s <<< FAILURE! - in com.testportal.TestPortal
+testPortalAlunoFail(com.testportal.TestPortal)  Time elapsed: 14.603 s  <<< FAILURE!
+com.codeborne.selenide.ex.ElementNotFound: 
+Element not found {.table tbody tr td.findBy(text "selenide")}
+Expected: exist
+Screenshot: file:/C:/Users/Graxaim/Documents/NetBeansProjects/testportal/build/reports/tests/1655252447491.0.png
+Page source: file:/C:/Users/Graxaim/Documents/NetBeansProjects/testportal/build/reports/tests/1655252447491.0.html
+Timeout: 4 s.
+Caused by: NoSuchElementException: Cannot locate an element .table tbody tr td.findBy(text "selenide")
+	at com.testportal.TestPortal.testPortalAlunoFail(TestPortal.java:53)
+Caused by: org.openqa.selenium.NoSuchElementException: 
+Cannot locate an element .table tbody tr td.findBy(text "selenide")
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.2.2', revision: '683ccb65d6'
+System info: host: 'DESKTOP-20DKHJO', ip: '10.0.0.101', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '16.0.1'
+Driver info: driver.version: unknown
+	at com.testportal.TestPortal.testPortalAlunoFail(TestPortal.java:53)
+

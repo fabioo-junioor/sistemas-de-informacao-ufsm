@@ -1,0 +1,58 @@
+import static org.junit.jupiter.api.Assertions.*;
+
+import java.time.Duration;
+
+
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class SeleniumTestFirefox {
+	//objeto que contém os métodos que controlam o navegador web
+	private static WebDriver driver;
+	WebElement element;
+ 
+	@BeforeAll
+    public static void openBrowser(){		
+		System.setProperty("webdriver.gecko.driver", "C://UFSM//2022//semestre_1//qualidade_software//Selenium_Files//geckodriver-v0.31.0-win64//geckodriver.exe");
+		driver= new FirefoxDriver();   	
+		driver.manage().window().maximize();		
+		//Deleting all the cookies
+		driver.manage().deleteAllCookies();
+	} 
+	
+	@Test
+    public void valid_UserCredential(){
+		
+		String url = "http://www.facebook.com";			
+		driver.get(url);		
+		driver.findElement(By.id("email")).sendKeys("fdgdgdf@gdfgfd.reter");		
+		driver.findElement(By.id("pass")).sendKeys("yuyuyu");
+		driver.findElement(By.name("login")).click();
+		//driver.manage().timeouts().implicitlyWait(Duration.ofMillis(5000));
+
+		
+		
+		try{
+		String meuNome = driver.findElement(By.xpath("//span[text()='Boris Becker']")).getText();
+		System.out.println(meuNome);
+		assertEquals("Boris Becker",meuNome);
+		}catch(Exception e){
+			System.out.println("login falhou");
+			assertTrue(false);
+		}	
+		
+	}
+			
+	
+	 @AfterAll
+	 public static void closeBrowser(){
+		 driver.quit();
+	 }
+
+}
