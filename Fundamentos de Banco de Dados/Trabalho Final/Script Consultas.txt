@@ -1,0 +1,105 @@
+select usuario.idade, count(usuario.idade) quantidade
+from usuario
+group by usuario.idade;
+
+select count(usuario.idEscolaridade) quantidade, escolaridade.grauEscolar
+from escolaridade 
+natural join usuario
+group by usuario.idEscolaridade;
+
+select count(usuario.idUsuario) participaram
+from usuario natural join participacao natural join evento
+where evento.DiaUm = 'sim';
+
+select count(usuario.idUsuario) participaram
+from usuario natural join participacao natural join evento
+where evento.DiaDois = 'sim';
+
+select count(usuario.idUsuario) participaram
+from usuario natural join participacao natural join evento
+where evento.DiaTres = 'sim';
+
+select count(usuario.idUsuario) participaram
+from usuario natural join participacao natural join evento
+where evento.DiaQuatro = 'sim';
+
+select evento.notaDiaUm, count(evento.notaDiaUm) quantidade
+from evento
+group by evento.notaDiaUm;
+
+select evento.notaDiaDois, count(evento.notaDiaDois) quantidade
+from evento
+group by evento.notaDiaDois;
+
+select evento.notaDiaTres, count(evento.notaDiaTres) quantidade
+from evento
+group by evento.notaDiaTres;
+
+select evento.notaDiaQuatro, count(evento.notaDiaQuatro) quantidade
+from evento
+group by evento.notaDiaQuatro;
+
+select evento.recomendacao, count(evento.recomendacao) quantidade
+from evento
+group by evento.recomendacao;
+
+select evento.nomeMidias, count(evento.nomeMidias) quantidade
+from evento
+group by evento.nomeMidias;
+
+#####################################################################################
+
+select avg(usuario.idade) media_idade
+from usuario
+where usuario.idUsuario in 
+	(select participacao.idUsuario 
+    from participacao natural join evento 
+    where evento.DiaUm = 'sim' 
+	or evento.DiaDois = 'sim'
+    or evento.DiaTres = 'sim'
+    or evento.DiaQuatro = 'sim');
+
+select avg(usuario.idade) media_idade
+from usuario
+where usuario.idUsuario in 
+	(select participacao.idUsuario 
+    from participacao natural join evento 
+    where evento.DiaUm = 'sim' 
+	and evento.DiaDois = 'sim'
+    and evento.DiaTres = 'sim'
+    and evento.DiaQuatro = 'sim');
+
+select count(usuario.idUsuario) quantidade_usuarios
+from usuario
+where usuario.idEscolaridade in
+	(select escolaridade.idEscolaridade 
+    from escolaridade 
+    where escolaridade.grauEscolar = 'nao sou estudante')
+and usuario.idUsuario in
+	(select participacao.idUsuario 
+    from participacao natural join evento 
+    where evento.DiaUm = 'sim' 
+    or evento.DiaDois = 'sim' 
+    or evento.DiaTres = 'sim' 
+    or evento.DiaQuatro = 'sim');
+
+select avg(evento.notaDiaUm) dia_um, 
+avg(evento.notaDiaDois) dia_dois, 
+avg(evento.notaDiaTres) dia_tres, 
+avg(evento.notaDiaQuatro) dia_quatro
+from usuario 
+natural join participacao 
+natural join evento;
+
+select evento.nomeMidias, avg(usuario.idade) media
+from evento natural join participacao natural join usuario
+group by evento.nomeMidias
+order by avg(usuario.idade) desc;
+
+select escolaridade.grauEscolar, count(escolaridade.grauEscolar) quantidade
+from escolaridade natural join usuario
+where usuario.idUsuario in 
+	(select participacao.idParticipacao 
+    from participacao natural join evento
+    where evento.recomendacao = 'sim')
+group by escolaridade.grauEscolar;

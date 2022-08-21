@@ -1,0 +1,5 @@
+insert into escolaridade values (null,'Ensino Fundamental'),
+(null,'Ensino Medio'),
+(null,'Ensino Superior'),
+(null,'Pos Graduacao'),
+(null,'Nao sou estudante');

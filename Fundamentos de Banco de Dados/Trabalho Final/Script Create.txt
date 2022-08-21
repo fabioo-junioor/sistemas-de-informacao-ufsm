@@ -1,0 +1,52 @@
+create database pesquisa1;
+use pesquisa1;
+
+CREATE TABLE usuario (
+    idUsuario int unique not null auto_increment,
+    nome varchar(50) not null,
+    email varchar(50) not null,
+    idade int not null,
+    idEscolaridade int not null,
+    primary key(idUsuario)
+);
+
+CREATE TABLE escolaridade (
+    idEscolaridade int unique not null auto_increment,
+    grauEscolar varchar(50) not null,
+    primary key(idEscolaridade)
+);
+
+CREATE TABLE evento (
+    idEvento int unique not null auto_increment,
+    DiaUm varchar(10) not null,
+    DiaDois varchar(10) not null,
+    DiaTres varchar(10) not null,
+    DiaQuatro varchar(10) not null,
+    notaDiaUm int not null,
+    notaDiaDois int not null,
+    notaDiaTres int not null,
+    notaDiaQuatro int not null,
+    recomendacao varchar(20) not null,
+    nomeMidias varchar(20) not null,
+    primary key(idEvento)
+);
+
+CREATE TABLE participacao (
+	idParticipacao int not null auto_increment,
+    idUsuario int not null,
+    idEvento int not null,
+    primary key(idParticipacao)
+);
+
+ 
+ALTER TABLE usuario ADD CONSTRAINT idEscolaridade
+    FOREIGN KEY (idEscolaridade)
+    REFERENCES escolaridade (idEscolaridade);
+    
+ALTER TABLE participacao ADD CONSTRAINT idUsuario
+	FOREIGN KEY (idUsuario)
+    REFERENCES usuario (idUsuario);
+
+ALTER TABLE participacao ADD CONSTRAINT idEvento
+    FOREIGN KEY (idEvento)
+    REFERENCES evento (idEvento);

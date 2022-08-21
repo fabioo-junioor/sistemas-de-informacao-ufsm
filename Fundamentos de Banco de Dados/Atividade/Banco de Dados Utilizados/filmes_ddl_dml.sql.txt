@@ -1,0 +1,126 @@
+drop database if exists filmes;
+create database filmes;
+use filmes;
+
+CREATE  TABLE `diretor` (
+  `id` INT NOT NULL ,
+  `nome` VARCHAR(45) NULL ,
+  `email` VARCHAR(45) NULL ,
+  PRIMARY KEY (`id`));
+  
+CREATE  TABLE `avaliador` (
+  `id` INT NOT NULL ,
+  `nome` VARCHAR(45) NULL ,
+  PRIMARY KEY (`id`));
+
+CREATE  TABLE `filme` (
+  `id` INT NOT NULL ,
+  `diretor` INT NOT NULL ,
+  `nome` VARCHAR(45) NOT NULL ,
+  `ano` INT NOT NULL ,
+  `arrecadacao` DOUBLE NOT NULL ,  
+  PRIMARY KEY (`id`) ,
+  INDEX `fk_filme_diretor1_idx` (`diretor` ASC) ,
+  CONSTRAINT `fk_filme_diretor1`
+    FOREIGN KEY (`diretor` )
+    REFERENCES `diretor` (`id` ));
+
+CREATE  TABLE `rank` (
+  `rank` INT NOT NULL ,
+  `filme_id` INT NOT NULL ,
+  `avaliador_id` INT NOT NULL ,
+  PRIMARY KEY (`rank`, avaliador_id) ,
+  INDEX `fk_rank_filme1_idx` (`filme_id` ASC) ,
+  CONSTRAINT `fk_rank_filme` 
+    FOREIGN KEY (`filme_id` )
+    REFERENCES `filme` (`id` ),
+  CONSTRAINT `fk_rank_avaliador` 
+    FOREIGN KEY (`avaliador_id` )
+    REFERENCES `avaliador` (`id` ));
+
+
+CREATE  TABLE `estudio` (
+  `id` INT NOT NULL ,
+  `nome` VARCHAR(45) NOT NULL ,
+  PRIMARY KEY (`id`));
+
+CREATE  TABLE `producao` (
+  `filme_id` INT NOT NULL ,
+  `estudio_id` INT NOT NULL ,
+  PRIMARY KEY (`filme_id`, `estudio_id`) ,
+  INDEX `fk_producao_estudio1_idx` (`estudio_id` ASC) ,
+  INDEX `fk_producao_filme_idx` (`filme_id` ASC) ,
+  CONSTRAINT `fk_producao_filme`
+    FOREIGN KEY (`filme_id` )
+    REFERENCES `filme` (`id` ),
+  CONSTRAINT `fk_producao_estudio1`
+    FOREIGN KEY (`estudio_id` )
+    REFERENCES `estudio` (`id` ));
+
+
+insert into avaliador (id, nome) values (1, 'Best Movies Ever');
+
+insert into diretor (id, nome, email) values (1, 'Steven Spielberg', 'sspielberg@yahoo.com');
+insert into diretor (id, nome, email) values (2, 'George Lucas', 'georgelucas@hotmail.com');
+insert into diretor (id, nome, email) values (3, 'Martin Scorcese', 'scorcese@gmail.com');
+insert into diretor (id, nome, email) values (4, 'James Cameron', 'james.cameron@gmail.com');
+
+insert into estudio (id, nome) values(1, 'Marvel Studios'); 
+insert into estudio (id, nome) values(2, 'Disney');
+insert into estudio (id, nome) values(3, 'MGM');
+insert into estudio (id, nome) values(4, 'Columbia');
+insert into estudio (id, nome) values(5, 'Warner Brothers');
+insert into estudio (id, nome) values(6, 'New Line');
+insert into estudio (id, nome) values(7, 'Legendary Pictures');
+insert into estudio (id, nome) values(8, 'LionsGate');
+insert into estudio (id, nome) values(9, 'FOX');
+insert into estudio (id, nome) values(10, 'Blue Sky');
+insert into estudio (id, nome) values(11, 'Summit Entertainment');
+insert into estudio (id, nome) values(12, 'Paramount');
+insert into estudio (id, nome) values(13, 'DreamWorks');
+
+INSERT INTO filme (id, diretor, nome, ano,arrecadacao) values (1, 1 ,'The Avengers', 2012,1511757910);
+INSERT INTO filme (id, diretor, nome, ano,arrecadacao) values (2, 2 ,'Skyfall', 2012,1094323504);
+INSERT INTO filme (id, diretor, nome, ano,arrecadacao) values (3, 3 ,'Batman 3', 2012,1081041287);
+INSERT INTO filme (id, diretor, nome, ano,arrecadacao) values (4, 1 ,'The Hunger Games', 2012,686533290);
+INSERT INTO filme (id, diretor, nome, ano,arrecadacao) values (5, 3 ,'The Hobbit', 2013,949203000);
+INSERT INTO filme (id, diretor, nome, ano,arrecadacao) values (6, 4 ,'Ice Age', 2014,875332288);
+INSERT INTO filme (id, diretor, nome, ano,arrecadacao) values (7, 1 ,'The Twilight', 2014,828180000);
+INSERT INTO filme (id, diretor, nome, ano,arrecadacao) values (8, 2 ,'Spider-man', 2013,752216557);
+INSERT INTO filme (id, diretor, nome, ano,arrecadacao) values (9, 4 ,'Madagascar 3', 2014,742110251);
+INSERT INTO filme (id, diretor, nome, ano,arrecadacao) values (10, 4 ,'MIB 3', 2013,624026776);
+
+
+insert into rank (rank, filme_id, avaliador_id) values (1,1,1);
+insert into rank (rank, filme_id, avaliador_id) values (2,2,1);
+insert into rank (rank, filme_id, avaliador_id) values (3,3,1);
+insert into rank (rank, filme_id, avaliador_id) values (4,5,1);
+insert into rank (rank, filme_id, avaliador_id) values (5,6,1);
+insert into rank (rank, filme_id, avaliador_id) values (6,7,1);
+insert into rank (rank, filme_id, avaliador_id) values (7,8,1);
+insert into rank (rank, filme_id, avaliador_id) values (8,9,1);
+insert into rank (rank, filme_id, avaliador_id) values (9,10,1);
+insert into rank (rank, filme_id, avaliador_id) values (10,4,1);
+
+
+insert into producao (filme_id, estudio_id) values (1,1);
+insert into producao (filme_id, estudio_id) values (1,2);
+insert into producao (filme_id, estudio_id) values (2,3);
+insert into producao (filme_id, estudio_id) values (2,4);
+insert into producao (filme_id, estudio_id) values (3,5);
+insert into producao (filme_id, estudio_id) values (3,7);
+insert into producao (filme_id, estudio_id) values (4,8);
+insert into producao (filme_id, estudio_id) values (5,5);
+insert into producao (filme_id, estudio_id) values (5,3);
+insert into producao (filme_id, estudio_id) values (5,6);
+insert into producao (filme_id, estudio_id) values (6,9);
+insert into producao (filme_id, estudio_id) values (6,10);
+insert into producao (filme_id, estudio_id) values (7,8);
+insert into producao (filme_id, estudio_id) values (7,11);
+insert into producao (filme_id, estudio_id) values (8,4);
+insert into producao (filme_id, estudio_id) values (8,1);
+insert into producao (filme_id, estudio_id) values (9,12);
+insert into producao (filme_id, estudio_id) values (9,13);
+insert into producao (filme_id, estudio_id) values (10,4);
+
+
