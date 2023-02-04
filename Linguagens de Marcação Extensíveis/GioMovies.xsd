@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="topicMap">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="topic" type="_topic" maxOccurs="unbounded"/>
+				<xs:element name="association" type="_association" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="_topic">
+		<xs:sequence>
+			<xs:element name="subjectIdentity" type="_subjectIdentity" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="instanceOf" type="_instanceOf" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="baseName" type="_baseName" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="occurrence" type="_occurrence" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:string"/>
+	</xs:complexType>
+	<xs:complexType name="_instanceOf">
+		<xs:sequence>
+			<xs:element name="topicRef" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="_baseName">
+		<xs:sequence>
+			<xs:element name="scope" type="_scope" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="baseNameString" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="_occurrence">
+		<xs:sequence>
+			<xs:element name="scope" type="_scope" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="resourceData" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="instanceOf" type="_instanceOf" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="resourceRef" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="_scope">
+		<xs:sequence>
+			<xs:element name="topicRef" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="_subjectIdentity">
+		<xs:sequence>
+			<xs:element name="subjectIndicatorRef"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="_association">
+		<xs:sequence>
+			<xs:element name="instanceOf" type="_instanceOf"/>
+			<xs:element name="member" type="_member" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="_member">
+		<xs:sequence>
+			<xs:element name="topicRef" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

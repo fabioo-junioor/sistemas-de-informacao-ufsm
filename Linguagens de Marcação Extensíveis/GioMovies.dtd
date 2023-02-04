@@ -1,0 +1,20 @@
+<!ATTLIST topic id ID #REQUIRED>
+<!ATTLIST topicRef href CDATA #REQUIRED>
+<!ATTLIST resourceRef href CDATA #REQUIRED>
+<!ATTLIST subjectIndicatorRef href CDATA #REQUIRED>
+
+<!ELEMENT topicMap (topic+, (association?)+)>
+<!ELEMENT topic (instanceOf?, subjectIdentity?, baseName+, (occurrence?)+)>
+<!ELEMENT instanceOf (topicRef)>
+<!ELEMENT baseName (scope?, baseNameString)>
+<!ELEMENT occurrence ((scope? | instanceOf?), (resourceData? | resourceRef?))>
+<!ELEMENT scope (topicRef)>
+<!ELEMENT subjectIdentity (subjectIndicatorRef)>
+<!ELEMENT subjectIndicatorRef (#PCDATA)>
+<!ELEMENT association (instanceOf, (member?)+)>
+<!ELEMENT member (topicRef)>
+
+<!ELEMENT baseNameString (#PCDATA)>
+<!ELEMENT topicRef (#PCDATA)>
+<!ELEMENT resourceData (#PCDATA)>
+<!ELEMENT resourceRef (#PCDATA)>
