@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Observação Aluno</title>
+</head>
+<body>
+    <table border="2">
+        <tr>
+            <td>ID</td>
+            <td>Observação</td>
+            <td>Data</td>
+            <td>Aluno</td>
+            <td>Nutricionista</td>
+        </tr>
+        {% for obs in details %}
+        <tr>
+            <td>{{obs[0]}}</td>
+            <td>{{obs[1]}}</td>
+            <td>{{obs[2]}}</td>
+            <td>{{obs[3]}}</td>
+            <td>{{obs[4]}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <hr>
+</body>
+</html>

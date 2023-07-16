@@ -1,0 +1,54 @@
+version: '3.1'
+
+services:
+
+    # ----------------------------------------
+    # MARIA DB
+    # ----------------------------------------
+    db:
+        image: mariadb:latest
+        container_name: MariaDB
+        restart: always
+#        network_mode: "MariaDB-NET"
+        environment:
+              MYSQL_ROOT_PASSWORD: $MariaDB_PASSWORD_ROOT
+              MYSQL_DATABASE:      $MariaDB_DATABASE
+              MYSQL_USER:          $MariaDB_USERNAME
+              MYSQL_PASSWORD:      $MariaDB_PASSWORD
+        
+        volumes: 
+            - ./init:/docker-entrypoint-initdb.d
+
+    # ----------------------------------------
+    # ADMINER
+    # ----------------------------------------
+    adminer:
+        image: adminer:latest
+        container_name: Adminer
+        restart: always
+#        network_mode: "MariaDB-NET"
+        ports:
+            - '${IP_ADDRESS}:9080:8080'
+
+    # ----------------------------------------
+    # PORTAINER
+    # Este serviço permite o monitoramento dos serviços docker pelo browser atraves da porta :9000
+    # ----------------------------------------
+    portainer:
+        image: portainer/portainer:latest
+        container_name: portainer
+        restart: unless-stopped
+#        network_mode: "MariaDB-NET"
+        ports:
+            - '${IP_ADDRESS}:9000:9000'
+        environment:
+            - PUID=${PUID}
+            - PGID=${PGID}
+            - TZ=${TZ}
+        volumes:
+            - './portainer:/data'
+            - '/var/run/docker.sock:/var/run/docker.sock'
+#            - '/etc/localtime:/etc/localtime:ro'
+        command: ${PORTAINERSTYLE} -H unix:///var/run/docker.sock
+        
+

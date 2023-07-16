@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Registro Dia</title>
+</head>
+<body>
+    <table border="2">
+        <tr>
+            <td>ID</td>
+            <td>Carboidrato</td>
+            <td>Proteina</td>
+            <td>Salada</td>
+            <td>Sobremesa</td>
+            <td>Responsavel</td>
+        </tr>
+        {% for registro in details %}
+        <tr>
+            <td>{{registro[0]}}</td>
+            <td>{{registro[1]}}</td>
+            <td>{{registro[2]}}</td>
+            <td>{{registro[3]}}</td>
+            <td>{{registro[4]}}</td>
+            <td>{{registro[5]}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <hr>
+</body>
+</html>

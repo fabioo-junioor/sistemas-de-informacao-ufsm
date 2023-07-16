@@ -1,0 +1,80 @@
+CREATE TABLE responsavel (
+    idResponsavel int unique not null auto_increment,
+    nome varchar(50) not null,
+    email varchar(50) not null,
+    cpf varchar(11) not null,
+    primary key(idResponsavel)
+);
+
+CREATE TABLE nutricionista (
+    idNutricionista int unique not null auto_increment,
+    nome varchar(50) not null,
+    email varchar(50) not null,
+    registro varchar(50) not null,
+    cpf varchar(11) not null,
+    primary key(idNutricionista)
+);
+
+CREATE TABLE aluno (
+    idAluno int unique not null auto_increment,
+    matricula varchar(50) not null,
+    nome varchar(50) not null,
+    cpf varchar(11) not null,
+    idResponsavel int not null,
+    primary key(idAluno)
+);
+
+CREATE TABLE observacao_aluno (
+	idObservacao int not null auto_increment,
+    obs varchar(100) not null,
+    dataDia varchar(10) not null,
+    idAluno int not null,
+    idNutricionista int not null,
+    primary key(idObservacao)
+);
+
+CREATE TABLE registro_dia (
+	idRegistro int not null auto_increment,
+    carboidrato varchar(50) not null,
+    proteina varchar(50) not null,
+    salada varchar(50) not null,
+    sobremesa varchar(50) not null,
+    idNutricionista int not null,
+    primary key(idRegistro)
+);
+ 
+ALTER TABLE aluno ADD CONSTRAINT idResponsavel
+    FOREIGN KEY (idResponsavel)
+    REFERENCES responsavel (idResponsavel);
+    
+ALTER TABLE registro_dia ADD CONSTRAINT idNutricionista
+	FOREIGN KEY (idNutricionista)
+    REFERENCES nutricionista (idNutricionista);
+
+ALTER TABLE observacao_aluno ADD CONSTRAINT idAluno
+    FOREIGN KEY (idAluno)
+    REFERENCES aluno (idAluno);
+    
+ALTER TABLE observacao_aluno ADD CONSTRAINT idNutricionista
+    FOREIGN KEY (idNutricionista)
+    REFERENCES nutricionista (idNutricionista);
+    
+
+/*
+CREATE TABLE funcionario (
+    idFuncionario int unique not null auto_increment,
+    nome varchar(50) not null,
+    email varchar(50) not null,
+    cpf varchar(11) not null,
+    funcao varchar(50) not null,
+    primary key(idFuncionario)
+);
+
+CREATE TABLE alimentos (
+    idAlimento int unique not null auto_increment,
+    nome varchar(50) not null,
+    tipo varchar(25) not null,
+    calorias float not null,
+    primary key(idAlimento)
+);
+*/
